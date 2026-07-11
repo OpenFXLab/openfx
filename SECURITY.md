@@ -15,13 +15,13 @@ Include the following in your report:
 - Potential impact assessment
 - Any suggested mitigations, if you have them
 
-You will receive an acknowledgment within 72 hours. We will keep you informed as the issue is investigated and resolved.
+We aim to acknowledge vulnerability reports within 72 hours. We will keep you informed as the issue is investigated and resolved.
 
 ---
 
 ## Current project status
 
-OpenFXLab is in a pre-alpha planning and development stage. No live application is currently deployed. The repository currently contains only documentation and planning materials.
+OpenFXLab is in a pre-alpha planning and development stage. No production application, API, database, user-account system, or payment system is currently deployed. The only public deployment is the static informational project website.
 
 ---
 

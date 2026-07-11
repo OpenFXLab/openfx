@@ -69,11 +69,12 @@ Primary analytical database.
 **On time-series extensions:** TimescaleDB extends PostgreSQL for time-series use cases. Whether to use it depends on the actual query patterns of the ingested data. The initial recommendation is to start with standard PostgreSQL and evaluate time-series extensions only if performance requires it.
 
 **Schema will include:**
-- `raw_cftc_reports` — source files preserved verbatim
+- `data_sources` — registry of all data sources with provenance metadata
+- `raw_files` — source files preserved verbatim
 - `positioning` — normalized positioning by currency, participant group, and report date
 - `macro_indicators` — macro data points by currency, indicator type, and observation date
-- `price_history` — OHLCV price data by currency pair and date
-- `data_sources` — registry of all data sources with provenance metadata
+- `price_history` — daily OHLC price data (volume included only when the selected source provides a clearly defined and appropriately documented volume measure) by currency pair and date
+- `derived_metrics` — persisted derived metrics (positioning percentiles, z-scores, rate differentials) with currency/contract, participant group, observation date, metric name, value, lookback window, methodology version, and calculation timestamp
 
 ---
 
@@ -189,8 +190,8 @@ Component tests using Vitest or Jest with React Testing Library. End-to-end test
 A suite of tests specifically for ingested data:
 
 - Completeness checks (no missing currencies or dates)
-- Range checks (positions within plausible bounds)
-- Consistency checks (gross long + gross short ≈ open interest)
+- Range checks: open interest must be non-negative; reported long, short, and spreading positions must be non-negative; reported values should not exceed plausible bounds relative to open interest
+- Consistency checks: participant and report totals should reconcile according to the exact fields, definitions, and tolerances documented for the selected CFTC report; validation logic must be based on documented CFTC column relationships rather than an assumed long-plus-short equality; any reconciliation difference should be logged and explained
 - Staleness checks (data not older than expected publication schedule)
 
 ### Schema validation

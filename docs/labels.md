@@ -1,97 +1,76 @@
 # Labels
 
-This document defines the recommended GitHub label system for OpenFXLab. Labels should be created in the repository settings before the project begins active development.
+This document describes the GitHub label system used in the OpenFXLab repository.
 
 ---
 
-## Area labels
+## Active custom labels
 
-These labels identify which part of the project an issue or PR relates to.
+These labels have been created in the repository and are available for use on issues and pull requests.
 
-| Label | Color (suggested) | Description |
-|-------|------------------|-------------|
-| `backend` | `#0075ca` (blue) | Backend code: API, data ingestion, database, processing |
-| `frontend` | `#e4e669` (yellow) | Frontend code: web interface, components, styling |
-| `data` | `#d93f0b` (orange) | Data sources, data quality, ingestion, storage |
-| `infrastructure` | `#bfd4f2` (light blue) | CI/CD, Docker, deployment, configuration |
-| `design` | `#f9d0c4` (pink) | UI/UX design, wireframes, mockups |
-| `documentation` | `#0052cc` (dark blue) | Documentation, methodology docs, guides |
-| `finance-research` | `#006b75` (teal) | Financial methodology, market research, user research |
-| `methodology` | `#5319e7` (purple) | Analytical methodology: formulas, indicators, calculations |
-| `security` | `#ee0701` (red) | Security vulnerabilities, authentication, data protection |
+| Label | Color | Description |
+|-------|-------|-------------|
+| `backend` | `#5319E7` (purple) | Backend services, APIs, databases, and data processing |
+| `frontend` | `#1D76DB` (blue) | Web interface, frontend components, and user experience |
+| `data` | `#FBCA04` (yellow) | Data ingestion, normalization, storage, and quality |
+| `infrastructure` | `#B60205` (red) | Docker, deployment, CI/CD, and development infrastructure |
+| `methodology` | `#C5DEF5` (light blue) | Financial calculations, indicators, and analytical methodology |
 
 ---
 
-## Type labels
+## Standard GitHub labels
 
-These labels classify the type of work the issue or PR represents.
+These default GitHub labels are available in the repository.
 
-| Label | Color (suggested) | Description |
-|-------|------------------|-------------|
-| `bug` | `#ee0701` (red) | Something is not working correctly |
-| `feature` | `#0075ca` (blue) | New feature or functionality |
-| `enhancement` | `#84b6eb` (light blue) | Improvement to existing functionality |
-| `research` | `#e6e6e6` (grey) | Research task requiring investigation, not necessarily code |
-| `question` | `#d876e3` (pink) | Question requiring clarification or discussion |
-
----
-
-## Contribution labels
-
-These labels help contributors find appropriate issues.
-
-| Label | Color (suggested) | Description |
-|-------|------------------|-------------|
-| `good first issue` | `#7057ff` (purple) | Suitable for first-time contributors |
-| `help wanted` | `#008672` (green) | Maintainers would especially welcome help with this |
-
----
-
-## Priority labels
-
-These labels indicate relative priority.
-
-| Label | Color (suggested) | Description |
-|-------|------------------|-------------|
-| `priority: high` | `#b60205` (dark red) | Blocks other work or addresses a critical need |
-| `priority: medium` | `#fbca04` (yellow) | Important but not blocking |
-| `priority: low` | `#e4e669` (light yellow) | Nice to have, address when higher priorities are done |
-
----
-
-## Status labels
-
-These labels communicate the current state of an issue or PR.
-
-| Label | Color (suggested) | Description |
-|-------|------------------|-------------|
-| `blocked` | `#ee0701` (red) | Cannot proceed — waiting on another issue, decision, or external factor |
-| `needs discussion` | `#d876e3` (pink) | Requires broader input or decision before work can proceed |
-| `needs data review` | `#006b75` (teal) | Requires review of data source, licensing, or quality before proceeding |
-| `needs methodology review` | `#5319e7` (purple) | Requires review of analytical methodology before implementation |
-
----
-
-## How to create labels
-
-Labels must be created manually in the GitHub repository settings, or via the GitHub CLI:
-
-```bash
-gh label create "backend" --color "0075ca" --description "Backend code: API, data ingestion, database, processing"
-gh label create "frontend" --color "e4e669" --description "Frontend code: web interface, components, styling"
-# ... and so on for each label
-```
-
-Alternatively, labels can be created through the GitHub web interface at:
-`https://github.com/OpenFXLab/openfx/issues/labels`
+| Label | Description |
+|-------|-------------|
+| `bug` | Something is not working correctly |
+| `documentation` | Improvements or additions to documentation |
+| `duplicate` | This issue or pull request already exists |
+| `enhancement` | New feature or feature request |
+| `good first issue` | Suitable for first-time contributors |
+| `help wanted` | Maintainers would especially welcome help with this |
+| `invalid` | This doesn't seem right |
+| `question` | Further information is requested |
+| `wontfix` | This will not be worked on |
 
 ---
 
 ## Label usage guidelines
 
-- Apply at least one **area** label to every issue and PR.
-- Apply exactly one **type** label to every issue.
-- Apply **priority** labels for issues that are being actively scheduled.
-- Apply **status** labels when an issue is blocked or needs a decision.
+- Apply at least one **custom area** label to every issue and PR.
+- Use `enhancement` for new features or feature requests.
 - Use `good first issue` liberally — it helps new contributors find work they can tackle.
-- Remove `blocked` and `needs discussion` labels once the blocking condition is resolved.
+- Multiple labels may be applied where relevant.
+
+---
+
+## How to create custom labels
+
+Custom labels can be created via the GitHub CLI or the web interface:
+
+```bash
+gh label create "backend" --color "5319E7" --description "Backend services, APIs, databases, and data processing"
+gh label create "frontend" --color "1D76DB" --description "Web interface, frontend components, and user experience"
+gh label create "data" --color "FBCA04" --description "Data ingestion, normalization, storage, and quality"
+gh label create "infrastructure" --color "B60205" --description "Docker, deployment, CI/CD, and development infrastructure"
+gh label create "methodology" --color "C5DEF5" --description "Financial calculations, indicators, and analytical methodology"
+```
+
+Or through the GitHub web interface at:
+`https://github.com/OpenFXLab/openfx/issues/labels`
+
+---
+
+## Possible future labels
+
+The following labels may be useful as the project grows, but have not yet been created. Do not treat these as active labels until they are added to the repository.
+
+| Label | Purpose |
+|-------|---------|
+| `priority: high` | Blocks other work or addresses a critical need |
+| `priority: medium` | Important but not blocking |
+| `priority: low` | Nice to have, address when higher priorities are done |
+| `blocked` | Cannot proceed — waiting on another issue, decision, or external factor |
+| `needs discussion` | Requires broader input or decision before work can proceed |
+| `research` | Research task requiring investigation, not necessarily code |

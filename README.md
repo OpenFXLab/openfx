@@ -4,15 +4,15 @@
 
 OpenFXLab is a planned open-source platform that brings together foreign exchange positioning data and macroeconomic context in one place. It is designed for currency traders, researchers, finance students, and developers who need a transparent, reproducible way to understand how market participants are positioned in FX markets and whether the macro environment supports those positions.
 
-**Current status: Pre-alpha — planning and design stage.** No application code has been written yet. This repository contains project documentation, product specifications, and contributor materials.
+**Current status: Pre-alpha — planning and design stage.** No production data pipeline, API, database, or interactive product application has been implemented yet. The repository currently includes planning materials, project infrastructure, and a static informational website.
 
 ---
 
 ## What is FX positioning?
 
-Currency futures markets require large participants to report their positions weekly to the U.S. Commodity Futures Trading Commission (CFTC). The CFTC publishes these reports publicly. They show how different groups of market participants — including leveraged funds, asset managers, and dealers — are positioned across major currency futures contracts.
+The CFTC publishes weekly aggregated reports showing reported positions across major futures markets. These reports show how different groups of market participants — including leveraged funds, asset managers, and dealers — are positioned across major currency futures contracts.
 
-A "long" position profits if the currency strengthens. A "short" position profits if the currency weakens. Aggregating those positions across thousands of traders and comparing them to historical levels reveals whether a particular directional bet is crowded, growing, or reversing.
+A long futures position benefits when the currency represented by the futures contract strengthens against USD, while a short position benefits when it weakens. OpenFXLab will normalize contract directions into consistent displayed currency-pair conventions. Aggregating those positions across thousands of traders and comparing them to historical levels reveals whether a particular directional bet is crowded, growing, or reversing.
 
 ## What is macro intelligence?
 
@@ -51,7 +51,7 @@ As an illustration of the type of insight the platform aims to provide:
 
 > *Illustrative example — not live market data.*
 >
-> Leveraged funds hold a historically large net short position in JPY futures (positioning percentile: 88th). Asset managers are moderately net long. The speculative short has grown for six consecutive weeks. However, USD/JPY has stopped making new highs, and the U.S.–Japan interest rate differential has begun narrowing as the Bank of Japan signals tightening. The short position may therefore be increasingly vulnerable to a rapid unwind.
+> Leveraged funds hold a historically large net short position in JPY futures (positioning percentile: 8th). Asset managers are moderately net long. The speculative short has grown for six consecutive weeks. However, USD/JPY has stopped making new highs, and the U.S.–Japan interest rate differential has begun narrowing as the Bank of Japan signals tightening. The short position may therefore be increasingly vulnerable to a rapid unwind.
 
 The platform would surface this type of observation as a research input — not as a trading signal or guaranteed forecast.
 
@@ -92,7 +92,7 @@ The stack is a proposal, not a final decision. Architecture choices remain open 
 
 ## Honest limitations
 
-CFTC positioning data represent reported positions in covered futures and options-on-futures markets only. They do not represent the entire global FX market. Spot trades, forwards, swaps, non-deliverable forwards, OTC options, bank inventories, corporate hedges, and sovereign activity may not be captured. Positioning data are published weekly and are delayed — typically by one business day after the Tuesday observation date. Participant classifications are useful but imperfect. A historically crowded position can remain crowded for a long time before reversing. Correlation does not imply causation. **OpenFXLab is not financial advice.**
+CFTC positioning data represent reported positions in covered futures and options-on-futures markets only. They do not represent the entire global FX market. Spot trades, forwards, swaps, non-deliverable forwards, OTC options, bank inventories, corporate hedges, and sovereign activity may not be captured. CFTC positioning data reflect positions as of Tuesday and are generally published on Friday, so they are delayed and should not be treated as real-time market data. Participant classifications are useful but imperfect. A historically crowded position can remain crowded for a long time before reversing. Correlation does not imply causation. **OpenFXLab is not financial advice.**
 
 ## Roadmap summary
 

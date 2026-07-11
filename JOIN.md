@@ -8,9 +8,9 @@ This document is for developers who are considering a deeper involvement in Open
 
 ## Current project status
 
-Pre-alpha. The repository currently contains project documentation, product specifications, a roadmap, and contributor materials. No application code has been written yet. The data pipeline, API, and web interface are all planned but not implemented.
+Pre-alpha. The repository currently contains project documentation, product specifications, a roadmap, contributor materials, and a static informational website. No production data pipeline, API, database, or interactive product application has been implemented yet.
 
-The most recent Phase 0 deliverables (documentation, architecture planning, issue backlog) are complete or nearing completion. The project is ready to move into Phase 1 (data foundation) as soon as a technical collaborator is engaged.
+The most recent Phase 0 deliverables (documentation, architecture planning, issue backlog) are complete or nearing completion. Phase 1 (data foundation) begins as technical implementation and architecture review start. Additional technical collaborators are currently welcome.
 
 ---
 

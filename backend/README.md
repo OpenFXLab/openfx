@@ -84,7 +84,7 @@ backend/
 
 ## What is not yet implemented
 
-Everything in this directory is planned, not built. The repository contains no application code at this stage.
+Everything in this directory is planned, not built. No production data pipeline or API service has been implemented yet.
 
 ---
 

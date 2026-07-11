@@ -47,7 +47,7 @@ Before any data source is integrated, it must satisfy:
 
 ### Exchange rates — major currency pairs
 
-**What it measures:** Daily OHLCV price data for EUR/USD, USD/JPY, GBP/USD, USD/CAD, AUD/USD, USD/CHF, NZD/USD.
+**What it measures:** Daily OHLC price data for EUR/USD, USD/JPY, GBP/USD, USD/CAD, AUD/USD, USD/CHF, NZD/USD. Volume data is included only when the selected source provides a clearly defined and appropriately documented volume measure. The decentralized spot FX market does not have one universal global volume figure; broker-specific tick volume or venue-specific volume must not be presented as total global FX volume.
 
 **Why it matters:** Price behavior provides the basis for momentum analysis and for identifying positioning-price divergences.
 

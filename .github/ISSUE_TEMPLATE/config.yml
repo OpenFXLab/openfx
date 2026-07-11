@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: General questions and collaboration inquiries
+    url: mailto:openfxresearch@gmail.com
+    about: For general questions, introductory conversations, or collaboration inquiries, please email the project lead directly.
+  - name: Project documentation
+    url: https://github.com/OpenFXLab/openfx/blob/main/README.md
+    about: Read the project README, product specification, roadmap, and contributor guides before filing an issue.

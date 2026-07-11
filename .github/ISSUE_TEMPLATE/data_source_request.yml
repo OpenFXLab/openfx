@@ -1,0 +1,128 @@
+name: Data Source Request
+description: Propose a new data source for OpenFXLab to integrate or evaluate.
+title: "[Data Source]: "
+labels: ["data", "research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposing a new data source? Please complete all sections carefully. Data source decisions require licensing and quality review before implementation. See [docs/data-sources.md](../blob/main/docs/data-sources.md) for the current data source framework.
+
+  - type: input
+    id: source_name
+    attributes:
+      label: Source name
+      description: The name of the data source (e.g., "Federal Reserve H.15 Selected Interest Rates")
+    validations:
+      required: true
+
+  - type: input
+    id: source_owner
+    attributes:
+      label: Source owner or publisher
+      description: The organization that publishes this data (e.g., "U.S. Federal Reserve", "Bank of England")
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: The URL of the data source or its documentation page
+    validations:
+      required: true
+
+  - type: dropdown
+    id: data_type
+    attributes:
+      label: Data type
+      description: What category of data does this source provide?
+      options:
+        - Positioning (futures/options)
+        - Currency prices
+        - Central bank policy rates
+        - Government bond yields
+        - Inflation indicators
+        - Employment indicators
+        - Economic growth indicators
+        - Commodity prices
+        - Volatility measures
+        - Risk sentiment
+        - Other macro
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: update_frequency
+    attributes:
+      label: Update frequency
+      description: How often is this data published or updated?
+      options:
+        - Real-time / intraday
+        - Daily
+        - Weekly
+        - Monthly
+        - Quarterly
+        - Annually
+        - Irregular
+    validations:
+      required: true
+
+  - type: textarea
+    id: historical_coverage
+    attributes:
+      label: Historical coverage
+      description: How far back does this data go? Are there any gaps in history?
+      placeholder: e.g., "Available from January 2000 to present with no known gaps"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: License type
+      description: What is the licensing situation for this data?
+      options:
+        - Public domain / no restrictions
+        - Open government data license
+        - Creative Commons
+        - Free for non-commercial use
+        - Commercial license required
+        - Unclear / needs investigation
+    validations:
+      required: true
+
+  - type: dropdown
+    id: redistribution
+    attributes:
+      label: Can this data be redistributed?
+      description: Does the license permit OpenFXLab to redistribute this data or display it publicly?
+      options:
+        - "Yes — confirmed"
+        - "Yes — with attribution"
+        - "Partial — display only, no download"
+        - "No — cannot redistribute"
+        - "Unclear — needs legal review"
+    validations:
+      required: true
+
+  - type: textarea
+    id: why_useful
+    attributes:
+      label: Why is this source useful for OpenFXLab?
+      description: Explain the analytical value this data would add.
+    validations:
+      required: true
+
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Known limitations
+      description: Any known issues with this data source (coverage gaps, revision history, timeliness, reliability).
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any other relevant notes, documentation links, or implementation considerations.

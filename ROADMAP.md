@@ -31,7 +31,7 @@ Establish the project foundation: documentation, architecture decisions, data-so
 
 ### Exit criteria
 
-Data sources confirmed. Architecture agreed. Technology stack confirmed. At least one technical collaborator engaged. All Phase 0 deliverables complete.
+Data sources confirmed. Architecture agreed. Technology stack confirmed. Additional technical collaborators engaged. All Phase 0 deliverables complete.
 
 ### Dependencies
 

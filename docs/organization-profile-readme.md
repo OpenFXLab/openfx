@@ -55,7 +55,7 @@ Independent currency traders · Global macro investors · Finance students and r
 
 ### Status
 
-This organization is active in Phase 0 of development: documentation, architecture planning, and data-source research. No production application code has been written yet. We are seeking technical collaborators.
+This organization is active in Phase 0 of development: documentation, architecture planning, data-source research, and the static informational website. No production data pipeline, API, database, or interactive product application has been implemented yet. Additional technical collaborators are currently welcome.
 
 ---
 

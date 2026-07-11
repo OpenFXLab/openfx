@@ -77,7 +77,7 @@ frontend/
 
 ## What is not yet implemented
 
-Everything in this directory is planned, not built. The repository contains no application code at this stage.
+Everything in this directory is planned, not built. No production web application has been implemented yet.
 
 The static project landing page is in `docs/` (not this directory) and is already implemented as a plain HTML/CSS/JS file.
 

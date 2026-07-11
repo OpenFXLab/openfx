@@ -9,21 +9,6 @@
   'use strict';
 
   /**
-   * Mobile navigation toggle
-   * Adds a hamburger button on small screens if needed.
-   * Currently the nav collapses gracefully with CSS; this provides
-   * a keyboard-accessible toggle if the nav links are hidden.
-   */
-  function initNavToggle() {
-    var nav = document.querySelector('.nav-links');
-    if (!nav) return;
-
-    // Only activate on screens where nav links may be hidden.
-    // The CSS already handles display; this just adds keyboard support
-    // if a toggle button is added to the HTML in the future.
-  }
-
-  /**
    * Smooth-scroll polyfill for browsers that don't support
    * scroll-behavior: smooth in CSS. Respects prefers-reduced-motion.
    */
@@ -61,12 +46,10 @@
   // Initialise on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
-      initNavToggle();
       initSmoothScroll();
       updateYear();
     });
   } else {
-    initNavToggle();
     initSmoothScroll();
     updateYear();
   }

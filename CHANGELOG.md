@@ -43,7 +43,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Notes
 
-This is the initial documentation and planning release. No application code has been written. The project is at Phase 0 (Foundation and validation) of the roadmap.
+This is the initial documentation and planning release. No production data pipeline, API, database, or interactive product application has been implemented yet. The project is at Phase 0 (Foundation and validation) of the roadmap.
 
 ---
 

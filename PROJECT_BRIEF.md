@@ -10,7 +10,7 @@ OpenFXLab is a planned open-source FX Positioning and Macro Intelligence Platfor
 
 ## What problem does it solve?
 
-Currency researchers currently piece together information from many separate places: the CFTC website, central bank publications, national statistics agencies, financial data providers, and their own spreadsheets. The underlying data is public and free. The work of collecting it, normalizing it, and combining it is repetitive, error-prone, and time-consuming.
+Currency researchers currently piece together information from many separate places: the CFTC website, central bank publications, national statistics agencies, financial data providers, and their own spreadsheets. Much of the underlying positioning and macroeconomic data is publicly available, although licensing, attribution, access, and redistribution requirements vary by source — particularly for historical FX price data. The work of collecting it, normalizing it, and combining it is repetitive, error-prone, and time-consuming.
 
 Simple COT-charting websites stop at displaying raw positioning. Institutional terminals go much further but are expensive, closed, and often inaccessible to independent researchers or students. The gap between those two options — more analytical than a charting website, more transparent and accessible than a professional terminal — is the space OpenFXLab aims to serve.
 
@@ -44,7 +44,7 @@ Phase 2 of the roadmap defines the MVP:
 
 ## Why is the MVP feasible?
 
-CFTC data is free, publicly released weekly, and has a well-documented format. The analytical calculations are straightforward statistics — percentiles, z-scores, rolling windows. The technology stack (Python, FastAPI, PostgreSQL, Next.js) is mature and well-documented. The biggest early work is careful data normalization and clear API design, both of which are engineering problems with known solutions.
+CFTC data is free and publicly released weekly with a well-documented format. The analytical calculations are straightforward statistics — percentiles, z-scores, rolling windows. The technology stack (Python, FastAPI, PostgreSQL, Next.js) is mature and well-documented. The biggest early work is careful data normalization and clear API design, both of which are engineering problems with known solutions.
 
 ## Why might users adopt it?
 

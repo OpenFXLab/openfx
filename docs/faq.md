@@ -10,7 +10,7 @@ OpenFXLab is a planned open-source FX Positioning and Macro Intelligence Platfor
 
 ### What stage is the project at?
 
-Pre-alpha. The repository currently contains detailed project documentation, product specifications, a roadmap, and contributor materials. No application code has been written yet. The platform is in the planning and design phase (Phase 0 of the roadmap).
+Pre-alpha. The repository currently contains detailed project documentation, product specifications, a roadmap, contributor materials, and a static informational website. No production data pipeline, API, database, or interactive product application has been implemented yet. The platform is in the planning and design phase (Phase 0 of the roadmap).
 
 ### Is this a real project or just documentation?
 

@@ -4,6 +4,8 @@ This document contains proposed GitHub issues for the OpenFXLab project. Issues 
 
 To create actual GitHub issues, use this document as the source. Issues can be filed using the templates in `.github/ISSUE_TEMPLATE/`.
 
+**Note on suggested labels:** The "Suggested labels" in each issue entry reflect the label system described in [docs/labels.md](labels.md). Custom labels currently active in the repository are: `backend`, `frontend`, `data`, `infrastructure`, and `methodology`. Standard GitHub labels (`bug`, `documentation`, `duplicate`, `enhancement`, `good first issue`, `help wanted`, `invalid`, `question`, `wontfix`) are also available. Labels such as `feature`, `research`, `needs data review`, `needs discussion`, and `needs methodology review` are proposed labels that may not yet exist in the repository; use `enhancement` for new features if the `feature` label has not been created.
+
 ---
 
 ## Phase 0 — Foundation
@@ -138,12 +140,13 @@ To create actual GitHub issues, use this document as the source. Issues can be f
 
 ### Issue 7: PostgreSQL database schema
 
-**Problem/goal:** Design and implement the PostgreSQL database schema for positioning data, macro data, price data, and provenance metadata.
+**Problem/goal:** Design and implement the PostgreSQL database schema for positioning data, macro data, price data, provenance metadata, and derived metrics.
 
 **Scope:** Backend — database
 
 **Acceptance criteria:**
-- Schema covers: `data_sources`, `raw_files`, `positioning`, `macro_indicators`, `price_history`
+- Schema covers: `data_sources`, `raw_files`, `positioning`, `macro_indicators`, `price_history`, `derived_metrics`
+- `derived_metrics` table includes enough information to identify: currency or contract, participant group, observation date, metric name, metric value, lookback window or calculation parameters, methodology or calculation version, and calculation timestamp
 - Alembic migrations created for all tables
 - Schema documented with field descriptions
 - All foreign key relationships defined
@@ -165,8 +168,8 @@ To create actual GitHub issues, use this document as the source. Issues can be f
 
 **Acceptance criteria:**
 - Completeness check: all 7 currencies present in each report
-- Range check: positions within plausible bounds (no negative open interest, etc.)
-- Consistency check: gross long + gross short approximately equals open interest
+- Range check: open interest and all reported long, short, and spreading positions must be non-negative; reported values should not exceed plausible bounds relative to open interest
+- Consistency check: participant and report totals should reconcile according to the exact fields, definitions, and tolerances documented for the selected CFTC report; validation logic must be based on documented CFTC column relationships rather than an assumed long-plus-short equality; any reconciliation difference should be logged and explained
 - Staleness check: report date is recent (not older than 10 days)
 - Weekly continuity check: no gaps of more than 2 consecutive weeks
 - All tests pass on sample historical data
@@ -248,7 +251,7 @@ To create actual GitHub issues, use this document as the source. Issues can be f
 
 ### Issue 12: Currency price data adapter
 
-**Problem/goal:** Implement an ingestion adapter for daily OHLCV price data for all 7 currency pairs.
+**Problem/goal:** Implement an ingestion adapter for daily OHLC price data for all 7 currency pairs. Volume data is included only when the selected source provides a clearly defined and appropriately documented volume measure. The decentralized spot FX market does not have one universal global volume figure; broker-specific tick volume or venue-specific volume must not be presented as total global FX volume.
 
 **Scope:** Backend — price data
 

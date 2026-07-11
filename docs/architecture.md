@@ -102,7 +102,7 @@ Normalized positioning data: currency, participant_group, report_date, observati
 Macro data: currency (or currency_pair for differentials), indicator_type, value, observation_date, source_id.
 
 ### `price_history`
-OHLCV price data: currency_pair, date, open, high, low, close, volume, source_id.
+OHLC price data (with volume included only when the selected source provides a clearly defined and appropriately documented volume measure): currency_pair, date, open, high, low, close, volume, source_id.
 
 ### `derived_metrics`
 Materialized derived metrics: positioning percentiles, z-scores, rate differentials. Refreshed after each ingestion cycle.

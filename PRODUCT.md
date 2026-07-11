@@ -106,7 +106,7 @@ Developer queries the API for the latest positioning data for all currencies. Th
 - Unemployment rate from official statistical agencies
 - GDP growth indicator where available
 - Relevant commodity prices (e.g., WTI crude oil for CAD, gold as risk indicator)
-- Currency price history (OHLCV, 1-day bars)
+- Currency price history (daily OHLC, with volume included only when the selected source provides a clearly defined and appropriately documented volume measure)
 - Implied volatility or proxy volatility measure
 - A global risk sentiment indicator (e.g., VIX-family measure or equity index)
 
@@ -254,11 +254,13 @@ USD is treated as the reference currency. There is no single direct CFTC "USD po
 
 ## Non-functional requirements
 
+*These are initial performance targets, subject to validation through implementation and testing.*
+
 - Page load time under 3 seconds on a standard connection for static content
 - API response time under 500ms for standard queries
 - Data freshness: positioning data updated within 24 hours of CFTC publication
 - Data freshness: macro data updated within 48 hours of official publication
-- Uptime: best-effort for self-hosted; SLA to be defined for a future hosted service
+- Uptime: best-effort for self-hosted during early stage; SLA to be defined for a future hosted service
 - All calculations reproducible from documented formulas
 
 ---

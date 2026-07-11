@@ -4,13 +4,15 @@ This document explains in plain English how OpenFXLab calculates every metric it
 
 **Status: Methodology specification — not yet implemented in code.**
 
+All formulas described here are reference specifications for the planned implementation. Minor implementation details may evolve as the software matures. Any material methodological change will be documented, reviewed, and reflected in the changelog and relevant API documentation.
+
 ---
 
 ## Core positioning metrics
 
 ### Gross long position
 
-The total number of contracts held in long positions (positions that profit if the currency rises) by a given participant group in a given futures market, as reported in the CFTC TFF report.
+The total number of contracts held in long positions by a given participant group in a given futures market, as reported in the CFTC TFF report. A long futures position benefits when the currency represented by the futures contract strengthens against USD. OpenFXLab normalizes contract directions into consistent displayed currency-pair conventions before reporting.
 
 ```
 Gross_Long = Sum of all reported long contracts for participant group G in currency C for report date D
@@ -22,7 +24,7 @@ This is a raw count of contracts, not a dollar value. To understand the notional
 
 ### Gross short position
 
-The total number of contracts held in short positions (positions that profit if the currency falls), by the same participant group and date.
+The total number of contracts held in short positions by the same participant group and date. A short futures position benefits when the currency represented by the futures contract weakens against USD.
 
 ```
 Gross_Short = Sum of all reported short contracts for participant group G in currency C for report date D

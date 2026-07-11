@@ -1,0 +1,73 @@
+name: Feature Request
+description: Propose a new feature or enhancement for OpenFXLab.
+title: "[Feature]: "
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting a feature request, please check the [issue backlog](../blob/main/docs/issue-backlog.md) and open issues to avoid duplicates. For major changes, consider opening a discussion first.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the project does this feature relate to?
+      options:
+        - Positioning data
+        - Macro data
+        - API
+        - Web interface / frontend
+        - Data ingestion / pipeline
+        - Screener
+        - Alerts
+        - Data download
+        - Methodology
+        - Documentation
+        - Infrastructure
+        - Python package
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or user need
+      description: What problem does this feature solve? Who benefits from it?
+      placeholder: As a [user type], I want to [action] so that [outcome].
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe how you envision the feature working.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What alternatives have you considered? Why is your proposal better?
+
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Roadmap phase
+      description: Which roadmap phase does this feature belong to?
+      options:
+        - Phase 1 — Data foundation
+        - Phase 2 — Public MVP
+        - Phase 3 — Intelligence layer
+        - Phase 4 — Ecosystem
+        - Phase 5 — Adoption
+        - Not sure
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any other relevant context, references, or examples.

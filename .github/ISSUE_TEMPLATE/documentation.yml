@@ -1,0 +1,57 @@
+name: Documentation Improvement
+description: Report a documentation error, gap, or improvement opportunity.
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Clear, accurate documentation is central to OpenFXLab. Thank you for helping improve it.
+
+  - type: input
+    id: file
+    attributes:
+      label: File or page
+      description: Which file or page needs improvement? (e.g., "docs/methodology.md", "README.md", "API docs for /positioning endpoint")
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of improvement
+      options:
+        - Factual error or inaccuracy
+        - Unclear or confusing explanation
+        - Missing information
+        - Outdated content
+        - Broken link
+        - Spelling or grammar
+        - Structure or organization
+        - New documentation needed
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current state
+      description: What does the documentation currently say (or fail to say)?
+      placeholder: Quote the relevant section, or describe what is missing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed improvement
+      description: What should the documentation say or include?
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any other relevant notes or references.

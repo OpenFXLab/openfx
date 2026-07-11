@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OpenFXLab — Open-source FX positioning and macro intelligence platform for traders, researchers, and developers." />
+  <title>OpenFXLab — FX Positioning and Macro Intelligence</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <header class="site-header" role="banner">
+    <nav class="nav-container" aria-label="Primary navigation">
+      <span class="nav-brand">OpenFXLab</span>
+      <ul class="nav-links" role="list">
+        <li><a href="https://github.com/OpenFXLab/openfx">GitHub</a></li>
+        <li><a href="https://github.com/OpenFXLab/openfx/blob/main/ROADMAP.md">Roadmap</a></li>
+        <li><a href="https://github.com/OpenFXLab/openfx/blob/main/CONTRIBUTING.md">Contribute</a></li>
+        <li><a href="mailto:openfxresearch@gmail.com" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="status-badge" aria-label="Project status">Pre-alpha &mdash; Planning &amp; Design Stage</div>
+        <h1 id="hero-heading">FX Positioning and<br />Macro Intelligence</h1>
+        <p class="hero-sub">
+          OpenFXLab is a planned open-source platform that combines CFTC foreign exchange positioning data
+          with macroeconomic context — helping traders, researchers, and developers understand how
+          currency markets are positioned and whether the macro environment supports those positions.
+        </p>
+        <div class="hero-actions">
+          <a href="https://github.com/OpenFXLab/openfx" class="btn btn-primary">View on GitHub</a>
+          <a href="https://github.com/OpenFXLab/openfx/blob/main/PROJECT_BRIEF.md" class="btn btn-secondary">Read the Brief</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section" aria-labelledby="problem-heading">
+      <div class="container">
+        <h2 id="problem-heading">The problem</h2>
+        <p>
+          Currency researchers currently piece together information from many separate places: CFTC reports,
+          central bank publications, national statistics agencies, and financial data feeds. The underlying
+          information is largely public and free. The work of collecting it, normalizing it, and combining
+          it is repetitive, error-prone, and time-consuming.
+        </p>
+        <p>
+          Simple COT-charting websites display raw positioning but lack macro context. Institutional terminals
+          provide sophisticated analytics but are expensive and closed. The gap between those two options —
+          more analytical than a chart site, more transparent and accessible than a professional terminal —
+          is the space OpenFXLab aims to serve.
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <h3>Fragmented sources</h3>
+            <p>Positioning data, central bank rates, inflation figures, and price history all live in separate systems with different formats and update schedules.</p>
+          </div>
+          <div class="card">
+            <h3>No historical context</h3>
+            <p>Raw positioning numbers are difficult to interpret without knowing whether a level is historically large, small, or typical.</p>
+          </div>
+          <div class="card">
+            <h3>Missing macro connection</h3>
+            <p>A position that made sense three months ago may be vulnerable today if the rate differential has shifted — but simple tools don't show that.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="section section-alt" aria-labelledby="solution-heading">
+      <div class="container">
+        <h2 id="solution-heading">The proposed solution</h2>
+        <p>
+          A modular open-source platform that ingests and normalizes CFTC positioning data, calculates standard
+          analytical metrics, connects positioning with macro drivers, and exposes everything through a web
+          interface, API, and data downloads — with every formula and data source documented openly.
+        </p>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#9642;</span>
+            <div>
+              <strong>Positioning data</strong> — Net positions, weekly changes, historical percentiles,
+              and z-scores for EUR, JPY, GBP, CAD, AUD, CHF, and NZD. Separate breakdowns for leveraged
+              funds, asset managers, and dealers.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#9642;</span>
+            <div>
+              <strong>Macro context</strong> — Central bank policy rates, interest rate differentials,
+              inflation, employment, and growth indicators alongside positioning data.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#9642;</span>
+            <div>
+              <strong>Analytical indicators</strong> — Crowding assessment, positioning-price divergence
+              detection, and positioning-macro divergence flags.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#9642;</span>
+            <div>
+              <strong>Open methodology</strong> — Every formula documented and reproducible. Every data
+              point attributed to its source with freshness timestamps.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon" aria-hidden="true">&#9642;</span>
+            <div>
+              <strong>API and downloads</strong> — RESTful JSON API and CSV downloads for programmatic
+              access. Python package planned for Phase 4.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conceptual preview -->
+    <section class="section" aria-labelledby="preview-heading">
+      <div class="container">
+        <h2 id="preview-heading">What the platform will show</h2>
+        <p class="section-note">
+          <strong>Illustrative concept — not live market data.</strong>
+          These panels show the type of information the platform plans to display.
+        </p>
+
+        <div class="preview-grid">
+          <!-- Overview card -->
+          <div class="preview-card">
+            <h3 class="preview-card-title">Market Overview</h3>
+            <div class="data-table-wrapper">
+              <table class="data-table" aria-label="Illustrative market overview — not live data">
+                <thead>
+                  <tr>
+                    <th scope="col">Pair</th>
+                    <th scope="col">Net Pos.</th>
+                    <th scope="col">Wk Chg</th>
+                    <th scope="col">Pctile</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>EUR/USD</td>
+                    <td>+85,420</td>
+                    <td class="positive">+3,200</td>
+                    <td>62%</td>
+                  </tr>
+                  <tr>
+                    <td>USD/JPY</td>
+                    <td>-112,300</td>
+                    <td class="negative">-4,100</td>
+                    <td class="extreme-low">8%</td>
+                  </tr>
+                  <tr>
+                    <td>GBP/USD</td>
+                    <td>+32,100</td>
+                    <td class="positive">+1,500</td>
+                    <td>55%</td>
+                  </tr>
+                  <tr>
+                    <td>AUD/USD</td>
+                    <td>+14,600</td>
+                    <td class="positive">+2,200</td>
+                    <td>71%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="preview-label">Illustrative example — not live market data</p>
+          </div>
+
+          <!-- Macro card -->
+          <div class="preview-card">
+            <h3 class="preview-card-title">USD/JPY Macro Context</h3>
+            <dl class="macro-list">
+              <div class="macro-item">
+                <dt>US Fed Funds Rate</dt>
+                <dd>5.25%</dd>
+              </div>
+              <div class="macro-item">
+                <dt>BoJ Policy Rate</dt>
+                <dd>0.10%</dd>
+              </div>
+              <div class="macro-item">
+                <dt>Rate Differential</dt>
+                <dd>+5.15% <span class="trend-label narrowing">(narrowing)</span></dd>
+              </div>
+              <div class="macro-item">
+                <dt>US CPI YoY</dt>
+                <dd>2.6%</dd>
+              </div>
+              <div class="macro-item">
+                <dt>JP CPI YoY</dt>
+                <dd>2.8%</dd>
+              </div>
+            </dl>
+            <p class="preview-label">Illustrative example — not live market data</p>
+          </div>
+
+          <!-- Metrics card -->
+          <div class="preview-card">
+            <h3 class="preview-card-title">JPY Positioning (Leveraged Funds)</h3>
+            <dl class="macro-list">
+              <div class="macro-item">
+                <dt>Net Position</dt>
+                <dd>-112,300 contracts</dd>
+              </div>
+              <div class="macro-item">
+                <dt>Weekly Change</dt>
+                <dd class="negative">-4,100</dd>
+              </div>
+              <div class="macro-item">
+                <dt>% of Open Interest</dt>
+                <dd>-18.4%</dd>
+              </div>
+              <div class="macro-item">
+                <dt>Historical Percentile</dt>
+                <dd class="extreme-low">8th percentile</dd>
+              </div>
+              <div class="macro-item">
+                <dt>Z-score</dt>
+                <dd>-2.1</dd>
+              </div>
+            </dl>
+            <p class="preview-label">Illustrative example — not live market data</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JPY Example -->
+    <section class="section section-alt" aria-labelledby="example-heading">
+      <div class="container">
+        <h2 id="example-heading">Example: JPY positioning scenario</h2>
+        <div class="example-box" role="note" aria-label="Illustrative research example">
+          <p class="example-label">Illustrative example — not live market data or investment advice</p>
+          <p>
+            Leveraged funds hold a historically large net short position in JPY futures
+            (positioning percentile: 8th — extremely net short). The short position has grown
+            for five consecutive weeks. However, USD/JPY has stopped making new highs despite
+            the remaining speculative short. Meanwhile, the U.S.–Japan interest rate differential
+            has begun narrowing as the Bank of Japan signals a shift toward tighter policy.
+          </p>
+          <p>
+            <strong>Research observation:</strong> The speculative short position is historically
+            crowded and is not being confirmed by recent price behavior. The macro conditions
+            that supported the short are weakening. This combination may represent an increased
+            risk of a rapid short unwind.
+          </p>
+          <p>
+            <em>This is the type of context OpenFXLab aims to surface — as a research input,
+            not as a trading signal or forecast.</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MVP -->
+    <section class="section" aria-labelledby="mvp-heading">
+      <div class="container">
+        <h2 id="mvp-heading">Initial MVP</h2>
+        <p>The first public release (Phase 2 of the roadmap) will include:</p>
+        <div class="mvp-grid">
+          <div>
+            <h3>Currencies</h3>
+            <ul>
+              <li>EUR/USD</li>
+              <li>USD/JPY</li>
+              <li>GBP/USD</li>
+              <li>USD/CAD</li>
+              <li>AUD/USD</li>
+              <li>USD/CHF</li>
+              <li>NZD/USD</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Positioning metrics</h3>
+            <ul>
+              <li>Net position</li>
+              <li>Weekly change</li>
+              <li>Historical percentile</li>
+              <li>Z-score</li>
+              <li>Position as % of open interest</li>
+              <li>Participant group breakdown</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Product</h3>
+            <ul>
+              <li>Market overview page</li>
+              <li>Currency detail pages</li>
+              <li>Macro driver panels</li>
+              <li>CSV data downloads</li>
+              <li>JSON API</li>
+              <li>Methodology documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why open source -->
+    <section class="section section-alt" aria-labelledby="opensource-heading">
+      <div class="container">
+        <h2 id="opensource-heading">Why open source</h2>
+        <div class="two-col">
+          <div>
+            <h3>Transparent methodology</h3>
+            <p>
+              Financial data tools often obscure their calculations. OpenFXLab takes the opposite approach:
+              every formula is documented, every data source is cited, and every calculation is reproducible
+              from the published code. Users can verify any number independently.
+            </p>
+          </div>
+          <div>
+            <h3>Accessible infrastructure</h3>
+            <p>
+              Students, independent researchers, and small funds cannot afford institutional terminal subscriptions.
+              Open-source development lowers the barrier to high-quality FX positioning analysis for users
+              who need more than a basic chart but less than a full institutional platform.
+            </p>
+          </div>
+        </div>
+        <p>
+          The core code and methodology are released under the
+          <a href="https://github.com/OpenFXLab/openfx/blob/main/LICENSE">MIT License</a>.
+          A future hosted service may add convenience features, but the analytical engine remains open.
+          See <a href="https://github.com/OpenFXLab/openfx/blob/main/docs/open-source-model.md">open-source model</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Status -->
+    <section class="section" aria-labelledby="status-heading">
+      <div class="container">
+        <h2 id="status-heading">Project status</h2>
+        <div class="status-grid">
+          <div class="status-item status-complete">
+            <span class="status-icon" aria-hidden="true">&#10003;</span>
+            <div>
+              <strong>Phase 0 (in progress)</strong>
+              <p>Project documentation, product specification, architecture planning, methodology documentation, issue backlog, landing page.</p>
+            </div>
+          </div>
+          <div class="status-item status-pending">
+            <span class="status-icon" aria-hidden="true">&#9675;</span>
+            <div>
+              <strong>Phase 1 — Data foundation</strong>
+              <p>CFTC ingestion, macro data adapters, database schema, data validation. Begins when a technical collaborator joins.</p>
+            </div>
+          </div>
+          <div class="status-item status-pending">
+            <span class="status-icon" aria-hidden="true">&#9675;</span>
+            <div>
+              <strong>Phase 2 — Public MVP</strong>
+              <p>API, web interface, charts, macro panels, data downloads, methodology pages.</p>
+            </div>
+          </div>
+          <div class="status-item status-pending">
+            <span class="status-icon" aria-hidden="true">&#9675;</span>
+            <div>
+              <strong>Phase 3+ — Intelligence and ecosystem</strong>
+              <p>Crowding indicators, screener, alerts, Python package, research notebooks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap summary -->
+    <section class="section section-alt" aria-labelledby="roadmap-heading">
+      <div class="container">
+        <h2 id="roadmap-heading">Roadmap</h2>
+        <p>
+          OpenFXLab uses milestone-based phases rather than calendar deadlines.
+          <a href="https://github.com/OpenFXLab/openfx/blob/main/ROADMAP.md">Read the full roadmap →</a>
+        </p>
+        <div class="roadmap-table-wrapper">
+          <table class="roadmap-table" aria-label="Roadmap phases summary">
+            <thead>
+              <tr>
+                <th scope="col">Phase</th>
+                <th scope="col">Focus</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>Foundation — documentation, architecture, data-source research</td>
+                <td>In progress</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Data — CFTC ingestion, macro adapters, historical storage</td>
+                <td>Planned</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Public MVP — API, web interface, charts, methodology pages</td>
+                <td>Planned</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Intelligence — crowding indicators, screener, alerts</td>
+                <td>Planned</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Ecosystem — Python package, research notebooks, contributor tooling</td>
+                <td>Planned</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Adoption — hosted features, broader asset coverage</td>
+                <td>Planned</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contributor CTA -->
+    <section class="section cta-section" aria-labelledby="contribute-heading">
+      <div class="container">
+        <h2 id="contribute-heading">Get involved</h2>
+        <p>
+          OpenFXLab is in its earliest stage and is seeking contributors across data engineering, backend
+          development, frontend development, financial methodology, and documentation.
+        </p>
+        <div class="cta-grid">
+          <div class="cta-card">
+            <h3>Technical collaborator</h3>
+            <p>Looking for a developer comfortable with Python data pipelines and ideally some frontend experience.
+            Architecture decisions are open for discussion. Read the full brief before reaching out.</p>
+            <a href="https://github.com/OpenFXLab/openfx/blob/main/JOIN.md" class="btn btn-primary">Read JOIN.md</a>
+          </div>
+          <div class="cta-card">
+            <h3>Open-source contributor</h3>
+            <p>Browse the issue backlog for good first issues, data source research tasks, documentation improvements,
+            and Phase 1 implementation work.</p>
+            <a href="https://github.com/OpenFXLab/openfx/blob/main/CONTRIBUTING.md" class="btn btn-secondary">CONTRIBUTING.md</a>
+          </div>
+          <div class="cta-card">
+            <h3>Issue backlog</h3>
+            <p>30+ documented proposed issues covering CFTC ingestion, database schema, API development,
+            frontend implementation, and more.</p>
+            <a href="https://github.com/OpenFXLab/openfx/blob/main/docs/issue-backlog.md" class="btn btn-secondary">View backlog</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" aria-labelledby="contact-heading">
+      <div class="container contact-section">
+        <h2 id="contact-heading">Contact</h2>
+        <p>
+          Project lead: <strong>Aditya Navin</strong><br />
+          Email: <a href="mailto:openfxresearch@gmail.com">openfxresearch@gmail.com</a>
+        </p>
+        <p>
+          For general questions, collaboration inquiries, or feedback on the project direction,
+          email is the best channel. For technical discussions, open a GitHub issue.
+        </p>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="section section-alt disclaimer-section" aria-labelledby="disclaimer-heading">
+      <div class="container">
+        <h2 id="disclaimer-heading">Disclaimer</h2>
+        <p>
+          OpenFXLab is a software research tool in development. Nothing in this project or on this website
+          constitutes financial advice, investment advice, or a recommendation to buy or sell any financial
+          instrument. Historical positioning patterns do not guarantee future results. All example data shown
+          on this page are illustrative only and do not represent current or recent market conditions.
+          CFTC positioning data covers futures and options-on-futures markets only and does not represent
+          the entire global FX market.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>
+        &copy; 2026 OpenFXLab &mdash;
+        <a href="https://github.com/OpenFXLab/openfx/blob/main/LICENSE">MIT License</a> &mdash;
+        <a href="https://github.com/OpenFXLab/openfx">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
